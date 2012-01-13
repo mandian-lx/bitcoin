@@ -9,6 +9,7 @@ URL:		http://bitcoin.org
 BuildRequires:	qt4-devel
 BuildRequires:	db5.2-devel
 BuildRequires:	miniupnpc-devel
+BuildRequires:	boost-devel
 
 %description
 Bitcoin is an experimental new digital currency that 
