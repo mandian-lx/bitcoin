@@ -1,13 +1,13 @@
 Summary:	Original Bitcoin crypto-currency wallet for automated services
 Name:		bitcoind
-Version:	0.5.3
+Version:	0.6.0
 Release:	1
-Source0:	bitcoind-0.5.3.tar.bz2
+Source0:	bitcoind-%version.tar.gz
 License:	MIT
 Group:		System/Configuration/Boot and Init
 URL:		http://bitcoin.org
 BuildRequires:	qt4-devel
-BuildRequires:	db5.2-devel
+BuildRequires:	db5.3-devel
 BuildRequires:	miniupnpc-devel
 BuildRequires:	boost-devel
 
@@ -21,14 +21,13 @@ Bitcoin is also the name of the open source
 software which enables the use of this currency.
 
 %prep
-%setup -q
-#cp /usr/include/db52/*.h src/
+%setup -q -n bitcoin-bitcoin-b3b5ab1
 
 %build
 %qmake_qt4
 pwd
 cd src
-%make -f makefile.unix BDB_INCLUDE_PATH='/usr/include/db52/' USE_SSL=1
+%make -f makefile.unix BDB_INCLUDE_PATH='/usr/include/db53/' USE_SSL=1
 
 %install
 mkdir -p %{buildroot}%{_bindir}
