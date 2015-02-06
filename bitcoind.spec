@@ -1,7 +1,7 @@
 Summary:	Original Bitcoin crypto-currency wallet for automated services
 Name:		bitcoind
 Version:	0.6.0
-Release:	1
+Release:	2
 Source0:	bitcoind-%{version}.tar.gz
 License:	MIT
 Group:		System/Configuration/Boot and Init
