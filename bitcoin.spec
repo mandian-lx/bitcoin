@@ -191,7 +191,7 @@ This package contains development files.
 %patch0 -p1
 
 # (tpg) fix linking with llvm-ar
-sed -i -e 's/\-rs//g' src/leveldb/Makefile*
+sed -i -e 's/\-rs/rs/g' src/leveldb/Makefile*
 
 %build
 %global optflags %{optflags} -I/usr/include/db52
