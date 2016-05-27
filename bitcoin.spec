@@ -1,6 +1,7 @@
 %define major 0
 %define libname %mklibname bitcoinconsensus %{major}
 %define devname %mklibname bitcoinconsensus -d
+%define _disable_lto 1
 
 Summary:	P2P Digital Currency
 Name:		bitcoin
