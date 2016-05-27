@@ -19,6 +19,7 @@ BuildRequires:	qt5-linguist-tools
 BuildRequires:	boost-devel
 BuildRequires:	db52-devel
 BuildRequires:	miniupnpc-devel
+BuildRequires:	pkgconfig(libzmq)
 BuildRequires:	pkgconfig(libevent)
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(protobuf)
@@ -28,6 +29,7 @@ BuildRequires:	pkgconfig(Qt5Gui)
 BuildRequires:	pkgconfig(Qt5Network)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Widgets)
+BuildRequires:	pkgconfig(libqrencode)
 
 %description
 Bitcoin is a free open source peer-to-peer electronic cash system that is
@@ -188,6 +190,9 @@ This package contains development files.
 %setup -q
 %patch0 -p1
 
+# (tpg) fix linking with llvm-ar
+sed -i -e 's/\-rs//g' src/leveldb/Makefile*
+
 %build
 %global optflags %{optflags} -I/usr/include/db52
 autoreconf -fi
@@ -197,7 +202,7 @@ autoreconf -fi
 	--with-daemon=yes \
 	--with-gui=qt5 \
 	--with-miniupnpc \
-	--without-qrencode \
+	--with-qrencode \
 	--with-incompatible-bdb
 
 %make
