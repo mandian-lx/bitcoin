@@ -17,7 +17,7 @@ BuildRequires:	git
 BuildRequires:	imagemagick
 BuildRequires:	qt5-linguist-tools
 BuildRequires:	boost-devel
-BuildRequires:	db5.2-devel
+BuildRequires:	db52-devel
 BuildRequires:	miniupnpc-devel
 BuildRequires:	pkgconfig(libevent)
 BuildRequires:	pkgconfig(openssl)
