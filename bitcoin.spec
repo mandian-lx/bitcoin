@@ -61,8 +61,8 @@ This package provides bitcoind, headless bitcoin daemon.
 
 %files -n bitcoind
 %doc COPYING README.md
-%{_mandir}/man1/bitcoind.1*
-%{_mandir}/man5/%{name}.conf.5*
+%{_mandir}/man1/%{name}d.1*
+#%{_mandir}/man5/%{name}.conf.5*
 %{_bindir}/bitcoind
 %dir %attr(700,bitcoin,bitcoin) %{_var}/lib/%{name}
 %dir %{_sysconfdir}/%{name}
@@ -95,10 +95,10 @@ This package provides bitcoin-qt, a GUI for Bitcoin based on Qt.
 
 %files qt
 %doc COPYING README.md
-%{_bindir}/bitcoin-qt
+%{_bindir}/%{name}-qt
 %{_datadir}/applications/%{name}-qt.desktop
 %{_iconsdir}/hicolor/*/apps/%{name}.png
-%{_mandir}/man1/bitcoin-qt.1*
+%{_mandir}/man1/%{name}-qt.1*
 
 #----------------------------------------------------------------------------
 
@@ -145,6 +145,8 @@ bitcoin-tx utility.
 %doc COPYING README.md
 %{_bindir}/%{name}-cli
 %{_bindir}/%{name}-tx
+%{_mandir}/man1/%{name}-cli.1*
+%{_mandir}/man1/%{name}-tx.1*
 
 #----------------------------------------------------------------------------
 
@@ -220,9 +222,7 @@ convert share/pixmaps/bitcoin256.png -scale ${N}x${N} $N.png;
 install -D -m 0644 $N.png %{buildroot}%{_iconsdir}/hicolor/${N}x${N}/apps/%{name}.png
 done
 
-install -D -m 0644 contrib/debian/manpages/bitcoind.1 %{buildroot}%{_mandir}/man1/bitcoind.1
-install -D -m 0644 contrib/debian/manpages/bitcoin-qt.1 %{buildroot}%{_mandir}/man1/bitcoin-qt.1
-install -D -m 0644 contrib/debian/manpages/bitcoin.conf.5 %{buildroot}%{_mandir}/man5/bitcoin.conf.5
+#install -D -m 0644 contrib/debian/manpages/bitcoin.conf.5 %{buildroot}%{_mandir}/man5/bitcoin.conf.5
 install -D -m 0644 contrib/debian/examples/bitcoin.conf %{buildroot}%{_sysconfdir}/%{name}/%{name}.conf
 mkdir -p %{buildroot}%{_var}/lib/%{name}
 
