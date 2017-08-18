@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   bitcoin-0.12.1.tar.gz: a4aa233bf4587169925c6b7c1dfc288ef3b0bc40
+sources:
+  bitcoin-0.14.2.tar.gz: 87a2c2cc1bc71f97deefbb9aa40c8d28e024dcb2
