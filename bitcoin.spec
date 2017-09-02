@@ -14,9 +14,10 @@ Source0:	https://github.com/%{name}/%{name}/archive/%{name}-%{version}.tar.gz
 Source1:	bitcoind.service
 Source2:	bitcoind-tmpfiles.conf
 Patch0:		bitcoin-fix-desktop-icon-name.patch
+BuildRequires:	ccache
 BuildRequires:	git
 BuildRequires:	imagemagick
-BuildRequires:	qt5-linguist-tools
+BuildRequires:	java-devel
 BuildRequires:	boost-devel
 BuildRequires:	db52-devel
 BuildRequires:	miniupnpc-devel
@@ -31,6 +32,7 @@ BuildRequires:	pkgconfig(Qt5Network)
 BuildRequires:	pkgconfig(Qt5Test)
 BuildRequires:	pkgconfig(Qt5Widgets)
 BuildRequires:	pkgconfig(libqrencode)
+BuildRequires:	qt5-linguist-tools
 
 %description
 Bitcoin is a free open source peer-to-peer electronic cash system that is
