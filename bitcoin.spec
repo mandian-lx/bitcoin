@@ -19,6 +19,7 @@ Patch0:		bitcoin-fix-desktop-icon-name.patch
 BuildRequires:	ccache
 BuildRequires:	git
 BuildRequires:	imagemagick
+BuildRequires:	lcov
 #BuildRequires:	java-devel
 BuildRequires:	boost-devel
 BuildRequires:	db52-devel
