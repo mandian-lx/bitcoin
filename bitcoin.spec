@@ -1,3 +1,5 @@
+#% {?_javapackages_macros:%_javapackages_macros}
+
 %define major 0
 %define libname %mklibname bitcoinconsensus %{major}
 %define devname %mklibname bitcoinconsensus -d
@@ -17,7 +19,7 @@ Patch0:		bitcoin-fix-desktop-icon-name.patch
 BuildRequires:	ccache
 BuildRequires:	git
 BuildRequires:	imagemagick
-BuildRequires:	java-devel
+#BuildRequires:	java-devel
 BuildRequires:	boost-devel
 BuildRequires:	db52-devel
 BuildRequires:	miniupnpc-devel
